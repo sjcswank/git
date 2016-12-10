@@ -74,7 +74,7 @@ public class PostController extends AbstractController {
 		User author = UserDao.findByUsername(username);
 		
 		//pass posts to blog.html
-		model.addAttribute("posts", author.getPosts());
+		model.addAttribute("posts", PostDao.findByAuthor(author));
 		
 		return "blog";
 	}
